@@ -1,1 +1,71 @@
-Hello World
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>SNS Share Test Page</title>
+    <link rel="stylesheet" href="./public/css/style.css" />
+    <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+    <script src="https://cdn.boomcdn.com/libs/instafeed-js/1.4.1/instafeed.min.js"></script>
+  </head>
+  <body>
+    <h1>SNS Share Test Page</h1>
+    <a
+      id="btnTwitter"
+      class="link-icon twitter"
+      href="javascript:shareTwitter();"
+      >트위터</a
+    >
+    <a
+      id="btnFacebook"
+      class="link-icon facebook"
+      href="javascript:shareFacebook();"
+      >페이스북</a
+    >
+    <a id="btnKakao" class="link-icon kakao" href="javascript:shareKakao();"
+      >카카오톡</a
+    >
+    <div id="instafeed">
+      <a
+        id="btnInstagram"
+        class="link-icon instagram"
+        href="javascript:shareInstagram();"
+        >인스타그램</a
+      >
+    </div>
+  </body>
+
+  <script>
+    function shareTwitter() {
+      var sendText = "개발새발"; // 전달할 텍스트
+      var sendUrl = "https://dianakoh.github.io/"; // 전달할 URL
+      window.open(
+        "https://twitter.com/intent/tweet?text=" + sendText + "&url=" + sendUrl
+      );
+    }
+
+    function shareFacebook() {
+      var sendUrl = "https://dianakoh.github.io/"; // 전달할 URL
+      window.open("http://www.facebook.com/sharer/sharer.php?u=" + sendUrl);
+    }
+
+    function shareKakao() {
+      Kakao.init("737c933be34ec919bd851b3c7206d4f6");
+      Kakao.isInitialized();
+      Kakao.Link.sendDefault({
+        objectType: "text",
+        text: "gunghapting",
+        link: {
+          mobileWebUrl: "https://dianakoh.github.io/",
+          webUrl: "https://dianakoh.github.io/",
+        },
+      });
+    }
+
+    function shareInstagram() {
+      var feed = new Instafeed({
+        accessToken:
+          "IGQVJWcEF5TzlaMnZAVQlh4QU95cGV2RW1VUHh6dmUtZAUdtYU4ydE5KUUY5eDUydnJ1OEZAtWjBURU5sdjFXbU1zdTF2S2N2SlJMUkp2bTcxcHdUX1ZAZAWWtFRmFBR3czZAW9XTFgyY0x4Y29qNTR6UjF3eQZDZD",
+      });
+      feed.run();
+    }
+  </script>
+</html>
