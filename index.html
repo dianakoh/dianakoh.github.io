@@ -4,7 +4,8 @@
     <title>SNS Share Test Page</title>
     <link rel="stylesheet" href="./public/css/style.css" />
     <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
-    <script src="https://cdn.boomcdn.com/libs/instafeed-js/1.4.1/instafeed.min.js"></script>
+    <!-- <script src="https://cdn.boomcdn.com/libs/instafeed-js/1.4.1/instafeed.min.js"></script> -->
+    <script src="public/js/instafeed.min.js"></script>
   </head>
   <body>
     <h1>SNS Share Test Page</h1>
@@ -24,12 +25,12 @@
       >카카오톡</a
     >
     <div id="instafeed">
-      <a
+      <!-- <a
         id="btnInstagram"
         class="link-icon instagram"
         href="javascript:shareInstagram();"
         >인스타그램</a
-      >
+      > -->
     </div>
   </body>
 
@@ -63,7 +64,7 @@
     function shareInstagram() {
       var feed = new Instafeed({
         accessToken:
-          "IGQVJWcEF5TzlaMnZAVQlh4QU95cGV2RW1VUHh6dmUtZAUdtYU4ydE5KUUY5eDUydnJ1OEZAtWjBURU5sdjFXbU1zdTF2S2N2SlJMUkp2bTcxcHdUX1ZAZAWWtFRmFBR3czZAW9XTFgyY0x4Y29qNTR6UjF3eQZDZD",
+          "IGQVJWcnEya2RaOFJxV3dpdnlvMlJvVVpVVHZAvTGZAsSi1lbHpIcDVJdHU5QnVqWjVabFpRV2pBY3VEYVFPMVZA5X0pNOEdndUpZATFpkYnl1SzVPQkxUZAERmeklPakZABTDh4R1RaM0RSbGVnWXhHTWxIVAZDZD",
       });
       feed.run();
     }
